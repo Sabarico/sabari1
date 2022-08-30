@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ecommerceDomain.Wipro.genericlib.BaseClass;
-public class WishlistPage extends BaseClass {
+public class WishlistPage  {
 @FindBy(xpath="//div[@class='play-icon']")
 private WebElement play;
 @FindBy(xpath="//div[@class='pause-icon']")

@@ -5,7 +5,11 @@
     <classes>
       <class name="com.ecommerceDomain.Scripts.TestCase2">
         <methods>
-          <include name="testcase2"/>
+          <include name="configBS"/>
+          <include name="configAS"/>
+          <include name="openApp"/>
+          <include name="closeApp"/>
+          <include name="testcase2" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- com.ecommerceDomain.Scripts.TestCase2 -->
     </classes>

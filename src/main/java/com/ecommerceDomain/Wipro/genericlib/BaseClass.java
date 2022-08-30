@@ -17,7 +17,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
-public class BaseClass {
+public class BaseClass extends Demo {
 public WebDriver driver;
 public ExtentHtmlReporter htmlreport;
 public static ExtentReports reports;
@@ -27,8 +27,8 @@ public FileUtilities fu=new FileUtilities();
 public static Connection con;
 @BeforeSuite
 public void configBS() throws SQLException {
-	System.out.println("Connect to database");
-	con=fu.getDataDb();
+//System.out.println("Connect to database");
+	//con=fu.getDataDb();
 	 htmlreport=new ExtentHtmlReporter(AutoConstant.reportpath);
 htmlreport.config().setDocumentTitle("SkillraryReport");
 htmlreport.config().setTheme(Theme.DARK);
@@ -36,7 +36,7 @@ htmlreport.config().setTheme(Theme.DARK);
 reports.attachReporter(htmlreport);
 }
 @BeforeMethod
-public void openApp() throws FileNotFoundException, IOException {
+public void openApp() throws IOException {
 	WebDriverManager.chromedriver().setup();
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
@@ -53,7 +53,7 @@ public void closeApp(ITestResult res) throws IOException {
 	else if(result==ITestResult.SUCCESS) {
 		test.log(Status.PASS,res.getName()+"test case is passed");
 	}
-	else if(result==ITestResult.SKIP) {
+	else {
 		test.log(Status.SKIP,res.getName()+"test case is skipped");
 	}
 	String name = res.getName();

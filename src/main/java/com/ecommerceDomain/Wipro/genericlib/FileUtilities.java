@@ -21,7 +21,7 @@ import com.mysql.cj.jdbc.Driver;
  * @author sabar
  *
  */
-public class FileUtilities extends BaseClass {
+public class FileUtilities  {
 	public static Connection con;
 	/**
 	 * It is used to read the data from propertyfile
@@ -44,7 +44,7 @@ public String getPropertyFile(String key) throws FileNotFoundException, IOExcept
  * @throws EncryptedDocumentException
  * @throws IOException
  */
-/*public String getExcelfile(String sheetname,int rownum,int cellnum) throws EncryptedDocumentException, IOException {
+public String getExcelfile(String sheetname,int rownum,int cellnum) throws EncryptedDocumentException, IOException {
 		FileInputStream fis=new FileInputStream(AutoConstant.excelfilepath);
 	Workbook wb=WorkbookFactory.create(fis);
 	return wb.getSheet("SheetName").getRow(rownum).getCell(cellnum).getStringCellValue();
@@ -64,7 +64,7 @@ for(int i=0;i<rownum;i++) {
 }
 }
 return obj;
-}*/
+}
 /**
  * It is used to read the data from database	
  * @return
@@ -73,9 +73,9 @@ return obj;
 public static Connection getDataDb() throws SQLException {
 		Driver driverref=new Driver();
 		DriverManager.registerDriver(driverref);
-	return con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sonoo","root","root");
+	return con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Wasm4","root","root");
 	}
-public static String queryExecution(String query,int column,String expdata) throws SQLException
+public  String queryExecution(String query,int column,String expdata) throws SQLException
 {
 	Statement statement= con.createStatement();
 	ResultSet result = statement.executeQuery(expdata);

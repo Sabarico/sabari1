@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.ecommerceDomain.Wipro.genericlib.BaseClass;
 
-public class CoreJavaPage extends BaseClass {
+public class CoreJavaPage  {
 @FindBy(xpath="//a[text()=' Core Java For Selenium Trainin']")
 private WebElement corejava;
 public CoreJavaPage(WebDriver driver) {

@@ -13,12 +13,13 @@ import com.ecommerceDomain.Wipro.genericlib.BaseClass;
 
 public class TestCase3 extends BaseClass {
 @Test
-public void testcase3() throws FileNotFoundException, IOException {
+public void testcase3() throws FileNotFoundException, IOException, InterruptedException {
 	test=reports.createTest("testcase3");
 	LoginPage lp=new LoginPage(driver);
 CoreJavaPage c=lp.searchcourse(driver,fu.getPropertyFile("cn"));
 			WishlistPage ad=c.corejavaselenium(driver);
 	utilities.switchframe(driver);
+	Thread.sleep(2000);
 	ad.playvideo();
 	utilities.switchBackFrame(driver);
 	ad.addtowishlist();

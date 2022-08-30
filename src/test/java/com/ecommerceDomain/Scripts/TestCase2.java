@@ -4,9 +4,8 @@ import org.testng.annotations.Test;
 import com.ecommerceDomain.Wipro.PomPages.ContactUsPage;
 import com.ecommerceDomain.Wipro.PomPages.LoginPage;
 import com.ecommerceDomain.Wipro.genericlib.BaseClass;
-import com.ecommerceDomain.Wipro.genericlib.Demo;
 import com.ecommerceDomain.Wipro.genericlib.FileUtilities;
-public class TestCase2 extends Demo{
+public class TestCase2 extends BaseClass{
 @Test(dataProvider="readExceldata")
 public void testcase2(String name,String mail,String subject,String message) throws InterruptedException  {
 	test=reports.createTest("testcase2");
